@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nutrient Tracker</title>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="static/styles.css" />
+
+  <!-- LOGIN CHECK -->
+  <script>
+    const current = localStorage.getItem("nt_currentUser");
+    if (!current) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Nutrient Tracker</h1>
+    <p>Track calories & major nutrients — simple, student-friendly.</p>
+
+    <!-- USER INFO + LOGOUT -->
+    <div style="position:absolute; top:20px; right:25px; display:flex; align-items:center; gap:10px;">
+      <span id="user-name" style="font-weight:600; color:#333;"></span>
+      <button id="theme-toggle" class="reset-btn" style="background:#4a90e2;">Dark Mode</button>
+      <a href="profile.html" class="reset-btn" 
+       style="background:#4a90e2; padding:8px 14px; color:white; border-radius:8px; text-decoration:none;">
+       Profile
+      </a>
+      <button id="logout-btn" class="reset-btn" style="background:#6c757d;">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ADD FOOD -->
+    <section class="input-card">
+      <h2>Add Food</h2>
+
+      <input id="food-search" placeholder="Search food (e.g., banana, rice)" />
+      <div id="suggest-box" class="suggestions"></div>
+
+      <input id="qty" type="number" min="1" value="1" style="margin-top:10px;" />
+
+      <select id="unit" style="margin-top:10px;">
+        <option value="g">grams (g)</option>
+        <option value="piece">piece</option>
+      </select>
+
+      <button id="add-btn" style="margin-top:12px;">Add</button>
+
+      <p style="margin-top:10px; color:gray;">
+        Try: banana, apple, rice, roti, milk
+      </p>
+    </section>
+
+    <!-- TODAY'S INTAKE -->
+    <section class="log-card">
+      <h2>Today's Intake</h2>
+
+      <ul id="log-list"></ul>
+
+      <div class="totals">
+        <div>Calories: <span id="total-cal">0</span> kcal</div>
+        <div>Protein: <span id="total-pro">0</span> g</div>
+        <div>Carbs: <span id="total-carb">0</span> g</div>
+        <div>Fat: <span id="total-fat">0</span> g</div>
+        <div>Sugar: <span id="total-sugar">0</span> g</div>
+      </div>
+
+      <canvas id="nutri-chart" style="margin-top:20px;"></canvas>
+    </section>
+
+    <!-- GOALS & SUGGESTIONS -->
+    <section class="goals-card">
+      <h2>Goals & Suggestions</h2>
+
+      <!-- Healthy Score -->
+      <div id="score-box" class="score-box">
+        Healthy Score: <span id="health-score">0</span> / 100
+      </div>
+
+      <button id="reset-btn" class="reset-btn">Reset Day</button>
+      <button id="save-day" class="save-btn">Save Today</button>
+
+      <label style="display:block; margin-top:10px;">
+        Daily Calorie Goal:
+        <input id="cal-goal" type="number" value="2000" style="margin-top:6px;" />
+      </label>
+
+      <p id="goal-msg" style="margin-top:10px;"></p>
+      <div id="suggestions"></div>
+    </section>
+
+    <!-- WEEKLY SUMMARY -->
+    <section class="summary-card">
+      <h2>Weekly Summary</h2>
+      <table id="weekly-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Calories</th>
+            <th>Sugar</th>
+            <th>Healthy Score</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT -->
+  <script src="static/script.js"></script>
+
+  <!-- TOAST CONTAINER (center) -->
+  <div id="toast-container"></div>
+
+  <!-- Show user name on load -->
+  <script>
+    const email = localStorage.getItem("nt_currentUser");
+    if (email) {
+      const users = JSON.parse(localStorage.getItem("nt_users") || "{}");
+      const user = users[email];
+      if (user) {
+        document.getElementById("user-name").textContent = user.name;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+

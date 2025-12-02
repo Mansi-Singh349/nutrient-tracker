@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Profile</title>
+
+  <link rel="stylesheet" href="static/styles.css">
+
+  <!-- Redirect if not logged in -->
+  <script>
+    const current = localStorage.getItem("nt_currentUser");
+    if (!current) window.location.href = "login.html";
+  </script>
+
+  <style>
+    .profile-card {
+      max-width: 500px;
+      margin: 60px auto;
+      background: var(--card);
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px var(--shadow);
+    }
+    .profile-card h2 {
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+    .save-btn2 {
+      margin-top: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .top-links {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="profile-card">
+
+    <div class="top-links">
+      <a href="index.html">← Back to App</a>
+      <button id="logout-btn" class="reset-btn" style="background:#6c757d;">Logout</button>
+    </div>
+
+    <h2>Your Profile</h2>
+
+    <div class="field">
+      <label>Name</label>
+      <input id="name-field" />
+    </div>
+
+    <div class="field">
+      <label>Email (cannot edit)</label>
+      <input id="email-field" disabled style="opacity:0.6;" />
+    </div>
+
+    <div class="field">
+      <label>Age</label>
+      <input id="age-field" type="number" min="1" />
+    </div>
+
+    <div class="field">
+      <label>Weight (kg)</label>
+      <input id="weight-field" type="number" min="1" />
+    </div>
+
+    <div class="field">
+      <label>Height (cm)</label>
+      <input id="height-field" type="number" min="1" />
+    </div>
+
+    <!-- ⭐ BMI SECTION -->
+    <div class="field">
+      <label>Your BMI</label>
+      <input id="bmi-field" disabled style="opacity:0.6;" />
+    </div>
+
+    <div class="field">
+      <label>BMI Category</label>
+      <input id="bmi-category" disabled style="opacity:0.6;" />
+    </div>
+
+    <div class="field">
+      <label>Daily Activity Level</label>
+      <select id="activity-field">
+        <option value="sedentary">Sedentary</option>
+        <option value="light">Lightly Active</option>
+        <option value="moderate">Moderately Active</option>
+        <option value="high">Highly Active</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Daily Calorie Goal</label>
+      <input id="goal-field" type="number" />
+    </div>
+
+    <button class="save-btn2" id="save-profile">Save Changes</button>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <script src="static/script.js"></script>
+
+  <script>
+    const email = localStorage.getItem("nt_currentUser");
+    const users = JSON.parse(localStorage.getItem("nt_users") || "{}");
+    const user = users[email] || {};
+
+    /* Load Saved Profile Info */
+    document.getElementById("name-field").value = user.name || "";
+    document.getElementById("email-field").value = email;
+    document.getElementById("age-field").value = user.age || "";
+    document.getElementById("weight-field").value = user.weight || "";
+    document.getElementById("height-field").value = user.height || "";
+    document.getElementById("activity-field").value = user.activity || "sedentary";
+    document.getElementById("goal-field").value = user.goal || 2000;
+
+    // Load saved BMI if it exists
+    document.getElementById("bmi-field").value = user.bmi || "";
+    document.getElementById("bmi-category").value = user.bmiCategory || "";
+
+    /* ⭐ BMI CALCULATION */
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById("weight-field").value);
+      const height = parseFloat(document.getElementById("height-field").value);
+
+      if (!weight || !height || height === 0) {
+        document.getElementById("bmi-field").value = "";
+        document.getElementById("bmi-category").value = "";
+        return;
+      }
+
+      const hMeters = height / 100;
+      const bmi = weight / (hMeters * hMeters);
+      const rounded = bmi.toFixed(1);
+
+      let category = "";
+      if (bmi < 18.5) category = "Underweight";
+      else if (bmi < 25) category = "Normal";
+      else if (bmi < 30) category = "Overweight";
+      else category = "Obese";
+
+      document.getElementById("bmi-field").value = rounded;
+      document.getElementById("bmi-category").value = category;
+
+      user.bmi = rounded;
+      user.bmiCategory = category;
+    }
+
+    document.getElementById("weight-field").addEventListener("input", calculateBMI);
+    document.getElementById("height-field").addEventListener("input", calculateBMI);
+
+    // Calculate BMI on page load
+    calculateBMI();
+
+    /* SAVE CHANGES */
+    document.getElementById("save-profile").onclick = function () {
+      user.name = document.getElementById("name-field").value;
+      user.age = document.getElementById("age-field").value;
+      user.weight = document.getElementById("weight-field").value;
+      user.height = document.getElementById("height-field").value;
+      user.activity = document.getElementById("activity-field").value;
+      user.goal = document.getElementById("goal-field").value;
+
+      // BMI fields already stored in user object
+
+      users[email] = user;
+
+      localStorage.setItem("nt_users", JSON.stringify(users));
+
+      // Update calorie goal globally
+      localStorage.setItem("nt_defaultGoal", user.goal);
+
+      showToast("Profile updated!", "success");
+    };
+
+    /* LOGOUT */
+    document.getElementById("logout-btn").onclick = () => {
+      localStorage.removeItem("nt_currentUser");
+      showToast("Logged out", "success");
+      setTimeout(() => window.location.href = "login.html", 600);
+    };
+  </script>
+
+</body>
+</html>
