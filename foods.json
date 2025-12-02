@@ -1,0 +1,77 @@
+[
+  {"name":"banana","serving_g":118,"calories":105,"protein":1.3,"carbs":27,"fat":0.3,"sugar":14},
+  {"name":"apple","serving_g":182,"calories":95,"protein":0.5,"carbs":25,"fat":0.3,"sugar":19},
+  {"name":"orange","serving_g":130,"calories":62,"protein":1.2,"carbs":15.4,"fat":0.2,"sugar":12},
+  {"name":"grapes","serving_g":100,"calories":69,"protein":0.7,"carbs":18,"fat":0.2,"sugar":15},
+  {"name":"mango","serving_g":165,"calories":99,"protein":1.4,"carbs":25,"fat":0.6,"sugar":23},
+
+  {"name":"milk (whole)","serving_g":244,"calories":149,"protein":7.9,"carbs":12,"fat":8,"sugar":12},
+  {"name":"curd (plain)","serving_g":100,"calories":98,"protein":11,"carbs":3.4,"fat":4.3,"sugar":3},
+  {"name":"buttermilk","serving_g":200,"calories":40,"protein":3,"carbs":4,"fat":1,"sugar":4},
+  {"name":"lassi (sweet)","serving_g":250,"calories":260,"protein":8,"carbs":38,"fat":8,"sugar":30},
+
+  {"name":"roti","serving_g":40,"calories":104,"protein":3,"carbs":17,"fat":0.6,"sugar":0.5},
+  {"name":"paratha","serving_g":80,"calories":260,"protein":5,"carbs":38,"fat":10,"sugar":2},
+  {"name":"aloo paratha","serving_g":120,"calories":320,"protein":7,"carbs":45,"fat":12,"sugar":2},
+  {"name":"white rice (cooked)","serving_g":158,"calories":205,"protein":4.3,"carbs":45,"fat":0.4,"sugar":0},
+  {"name":"brown rice (cooked)","serving_g":195,"calories":216,"protein":5,"carbs":45,"fat":1.8,"sugar":1},
+  {"name":"fried rice","serving_g":200,"calories":350,"protein":7,"carbs":55,"fat":10,"sugar":3},
+  {"name":"biryani (chicken)","serving_g":250,"calories":500,"protein":20,"carbs":65,"fat":15,"sugar":4},
+  {"name":"veg pulao","serving_g":200,"calories":330,"protein":6,"carbs":55,"fat":8,"sugar":3},
+
+  {"name":"dal","serving_g":198,"calories":230,"protein":18,"carbs":40,"fat":0.8,"sugar":2},
+  {"name":"rajma","serving_g":100,"calories":140,"protein":9,"carbs":25,"fat":0.8,"sugar":1},
+  {"name":"chole","serving_g":100,"calories":164,"protein":8.8,"carbs":27,"fat":2.6,"sugar":5},
+  {"name":"sambar","serving_g":100,"calories":70,"protein":3,"carbs":10,"fat":2,"sugar":3},
+  {"name":"vegetable curry","serving_g":100,"calories":110,"protein":3,"carbs":12,"fat":6,"sugar":3},
+
+  {"name":"idli","serving_g":50,"calories":58,"protein":2,"carbs":12,"fat":0.4,"sugar":0},
+  {"name":"dosa","serving_g":80,"calories":168,"protein":3.9,"carbs":25,"fat":4.5,"sugar":1},
+  {"name":"masala dosa","serving_g":150,"calories":380,"protein":6,"carbs":50,"fat":15,"sugar":3},
+  {"name":"uttapam","serving_g":120,"calories":220,"protein":5,"carbs":35,"fat":6,"sugar":3},
+  {"name":"upma","serving_g":100,"calories":152,"protein":3.4,"carbs":23,"fat":5,"sugar":2},
+  {"name":"poha","serving_g":100,"calories":158,"protein":2.5,"carbs":28,"fat":4,"sugar":1.5},
+  {"name":"khichdi","serving_g":200,"calories":250,"protein":9,"carbs":40,"fat":5,"sugar":2},
+
+  {"name":"egg","serving_g":50,"calories":78,"protein":6.3,"carbs":0.6,"fat":5.3,"sugar":0},
+  {"name":"omelette","serving_g":100,"calories":154,"protein":9,"carbs":2,"fat":12,"sugar":1},
+  {"name":"paneer","serving_g":100,"calories":265,"protein":18,"carbs":1,"fat":20,"sugar":3},
+  {"name":"chicken","serving_g":100,"calories":165,"protein":31,"carbs":0,"fat":3.6,"sugar":0},
+  {"name":"fish fry","serving_g":100,"calories":250,"protein":22,"carbs":5,"fat":15,"sugar":1},
+  {"name":"mutton curry","serving_g":150,"calories":350,"protein":20,"carbs":8,"fat":25,"sugar":2},
+
+  {"name":"salad (veg)","serving_g":100,"calories":50,"protein":2,"carbs":10,"fat":0.5,"sugar":3},
+  {"name":"sprouts","serving_g":100,"calories":100,"protein":8,"carbs":17,"fat":1,"sugar":2},
+{"name":"oats porridge","serving_g":200,"calories":240,"protein":8,"carbs":41,"fat":4,"sugar":7},
+  {"name":"cornflakes with milk","serving_g":200,"calories":220,"protein":5,"carbs":40,"fat":2,"sugar":18},
+  {"name":"muesli","serving_g":60,"calories":225,"protein":4,"carbs":40,"fat":6,"sugar":12},
+  {"name":"dry fruits (mixed)","serving_g":30,"calories":180,"protein":5,"carbs":12,"fat":14,"sugar":8},
+  {"name":"almonds","serving_g":28,"calories":165,"protein":6,"carbs":6,"fat":14,"sugar":1},
+  {"name":"peanuts","serving_g":28,"calories":160,"protein":7,"carbs":6,"fat":14,"sugar":1},
+
+  {"name":"pizza","serving_g":107,"calories":285,"protein":12,"carbs":36,"fat":10,"sugar":4},
+  {"name":"burger","serving_g":150,"calories":295,"protein":17,"carbs":30,"fat":12,"sugar":6},
+  {"name":"french fries","serving_g":117,"calories":365,"protein":4,"carbs":48,"fat":17,"sugar":0.3},
+  {"name":"maggi","serving_g":120,"calories":385,"protein":8,"carbs":56,"fat":14,"sugar":4},
+  {"name":"samosa","serving_g":70,"calories":150,"protein":3,"carbs":18,"fat":8,"sugar":1},
+  {"name":"kachori","serving_g":80,"calories":220,"protein":4,"carbs":24,"fat":12,"sugar":1},
+  {"name":"pakoda","serving_g":50,"calories":170,"protein":4,"carbs":12,"fat":12,"sugar":1},
+  {"name":"momos (fried)","serving_g":100,"calories":300,"protein":8,"carbs":35,"fat":15,"sugar":3},
+  {"name":"momos (steamed)","serving_g":100,"calories":180,"protein":9,"carbs":24,"fat":5,"sugar":2},
+
+  {"name":"chips","serving_g":28,"calories":152,"protein":2,"carbs":15,"fat":10,"sugar":1},
+  {"name":"kurkure","serving_g":28,"calories":150,"protein":2,"carbs":17,"fat":8,"sugar":1},
+
+  {"name":"ice cream","serving_g":100,"calories":207,"protein":3.5,"carbs":24,"fat":11,"sugar":21},
+  {"name":"gulab jamun","serving_g":50,"calories":160,"protein":2,"carbs":30,"fat":5,"sugar":25},
+  {"name":"rasgulla","serving_g":50,"calories":106,"protein":4,"carbs":22,"fat":2,"sugar":18},
+  {"name":"jalebi","serving_g":50,"calories":187,"protein":1,"carbs":41,"fat":3,"sugar":38},
+  {"name":"chocolate","serving_g":40,"calories":210,"protein":2,"carbs":24,"fat":12,"sugar":20},
+
+  {"name":"cold drink","serving_g":355,"calories":140,"protein":0,"carbs":39,"fat":0,"sugar":39},
+  {"name":"energy drink","serving_g":250,"calories":110,"protein":0,"carbs":28,"fat":0,"sugar":27},
+  {"name":"milkshake","serving_g":300,"calories":350,"protein":12,"carbs":60,"fat":8,"sugar":50},
+  {"name":"coffee (milk)","serving_g":240,"calories":120,"protein":3,"carbs":18,"fat":3,"sugar":12},
+  {"name":"tea with sugar","serving_g":150,"calories":75,"protein":1,"carbs":13,"fat":2,"sugar":12}
+]
+

@@ -1,0 +1,404 @@
+/* Modern Nutrient Tracker UI — Clean Pastel Theme */
+/* LIGHT MODE (default) */
+:root {
+  --bg: #f5faff;
+  --card: #ffffff;
+  --text: #222;
+  --text-muted: #777;
+  --accent: #3f8cff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --border: #e5e8eb;
+}
+
+/* DARK MODE */
+.dark {
+  --bg: #0e1116;
+  --card: #161b22;
+  --text: #e6edf3;
+  --text-muted: #9aa4b1;
+  --accent: #539bf5;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --border: #2d333b;
+  .dark #suggestions div,
+  .dark #suggest-box div {
+  background: #1f2731 !important;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.dark #suggestions,
+.dark #suggest-box {
+  background: #1f2731 !important;
+  color: var(--text);
+}
+
+}
+
+/* Apply them */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s, color 0.25s;
+}
+
+.input-card, .log-card, .goals-card, .summary-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: background 0.25s, color 0.25s;
+}
+
+input, select, button {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Colors */
+:root {
+  --bg: #f5f9fc;
+  --white: #ffffff;
+  --card: #ffffff;
+  --accent: #4a90e2;
+  --accent-hover: #357ac9;
+  --danger: #ff5252;
+  --danger-hover: #e64545;
+  --success: #28a745;
+  --warning: #ffb84d;
+  --text-dark: #111;
+  --text-muted: #666;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Global */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  background: var(--white);
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 4px;
+  color: var(--text-muted);
+}
+
+/* Layout Grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 25px;
+}
+
+/* Cards */
+.input-card,
+.log-card,
+.goals-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Section Titles */
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+/* Inputs */
+input, select {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 4px rgba(74,144,226,0.3);
+}
+
+/* Button (Add) */
+#add-btn {
+  padding: 10px 16px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#add-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* Reset Button */
+.reset-btn {
+  background: var(--danger);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.reset-btn:hover {
+  background: var(--danger-hover);
+}
+
+/* Food List */
+#log-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#log-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+/* Remove Button */
+.remove-btn {
+  background: var(--danger);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-btn:hover {
+  background: var(--danger-hover);
+}
+
+/* Totals */
+.totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.totals div {
+  background: var(--bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Suggestions */
+#suggestions div {
+  margin-top: 6px;
+  padding: 8px;
+  background: #eef7ff;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+#suggestions div, 
+#suggest-box div {
+  background: var(--card);
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+  transition: 0.25s;
+}
+
+#suggestions div:hover,
+#suggest-box div:hover {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 12px;
+  color: var(--text-muted);
+}
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%); /* center placement */
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.toast {
+  padding: 14px 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeInOut 2.5s ease forwards;
+}
+
+.toast-success {
+  background: #28a745;
+}
+
+.toast-warning {
+  background: #f0ad4e;
+}
+
+.toast-error {
+  background: #d9534f;
+}
+
+/* Center fade animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+.score-box {
+  background: #eef7ff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  display: inline-block;
+}
+
+.score-green {
+  background: #d4f5d4 !important;
+  color: #2e8b57 !important;
+}
+
+.score-yellow {
+  background: #fff4cc !important;
+  color: #b8860b !important;
+}
+
+.score-red {
+  background: #ffd6d6 !important;
+  color: #b00020 !important;
+}
+.save-btn {
+  background: #4a90e2;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.save-btn:hover {
+  background: #357ac9;
+}
+.summary-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px var(--shadow);
+  grid-column: span 3;
+  margin-top: 20px;
+}
+
+#weekly-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#weekly-table th, #weekly-table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+
+#weekly-table th {
+  background: #e8f2ff;
+}
+.suggest-card {
+  background: var(--card);
+  color: var(--text);
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 15px;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: 0.3s ease;
+}
+
+/* Type styling */
+.type-good {
+  border-left: 5px solid #2ecc71;
+}
+.type-normal {
+  border-left: 5px solid #3f8cff;
+}
+.type-low {
+  border-left: 5px solid #f1c40f;
+}
+.type-warn {
+  border-left: 5px solid #e74c3c;
+}
+
+/* Dark mode */
+.dark .suggest-card {
+  background: #1f2630;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+  
